@@ -61,6 +61,7 @@
   window.addEventListener("keydown", function(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
     if (!audio) return // console doesn't show error on non-registered key
+    audio.currentTime = 0 // resets sound
     audio.play()
   })
 </script>
