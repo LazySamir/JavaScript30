@@ -68,22 +68,32 @@
   });
   
   console.table(ageSort)
-  
-  // const oldest = inventors.sort(function(a, b) {
-  //   const lastInventor = a.passed - a.year;
-  //   const nextInventor = b.passed - b.year;
-  //   return lastInventor > nextInventor ? -1 : 1;
-  // });
-  // console.table(oldest);
-  
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+  // const list = document.querySelector('.mw-category');
+  // // const links = list.querySelectorAll('a')
+  // // this is a nodelist so doesnt take .map. need to convert to array.
+  // const links = Array.from(list.querySelectorAll('a'));
+  
+  // // return all links with de in it
+  // const de = links
+  //                 .map(link => link.textContent)
+  //                 .filter(streetName => streetName.includes("de"));
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
+  const alphaSort = people.sort((a, b) => {
+    const [aLast, aFirst] = a.split(", ");
+    const [bLast, bFirst] = b.split(", ");
+    // splits the two elements of array into their own variables
+    return aLast > bLast ? -1 : 1;
+    // this uses the original string, not the new constants
+  })
+
+console.log(alphaSort)
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
