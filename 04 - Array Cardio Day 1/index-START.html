@@ -94,9 +94,26 @@
   })
 
 console.log(alphaSort)
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+  
+  // const totalYears = inventors.reduce((total, inventor) => {
+  //   return total + (inventor.passed - inventor.year);
+  // }, 0)
+
+  const instances = data.reduce(function(obj, item){
+    if(!obj[item]){
+      obj[item] = 0
+    }
+    // this checks to see if item exists in object, if not, creates one equal to 0
+    obj[item]++;
+    return obj;
+  }, {});
+  // last {} allows us to start with a blank object, then after every loop, we add to the object
+console.log(instances)
+
 
   </script>
 </body>
