@@ -45,13 +45,8 @@
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
-  const ageSort = inventors.sort(function(first, second) {
-    if(first.year > second.year) {
-      return 1
-    } else {
-      return -1
-    }
-  })
+  const ageSort = inventors.sort((first, second) => first.year > second.year ? 1 : -1)
+  // needed to use implit return with this ternery 
   
   console.log(ageSort)
   console.table(ageSort)
