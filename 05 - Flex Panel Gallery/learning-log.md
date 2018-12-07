@@ -30,3 +30,7 @@ not necessary but nice effect
 select all panels
 create function that will toggle classList
 addEventListener forEach panel, on click call function
+
+function(e) {e.propertyName} - shows which transitions are ending 
+if e.propertyName.includes one of the transitions, then toggle.
+addEventListener on transitionend, toggleOpenActive
