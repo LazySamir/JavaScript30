@@ -17,6 +17,27 @@
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
+let cities = [];
+
+// fetch returns a promise - something will eventually come back
+// .then to work with promise, returns blob of data (it doesnt know the type of data it is)
+
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => cities = data)
+
+//blob.json() returns another promise
+
+function findMatches(wordToMatch, cities) {
+  return cities.filter(place => {
+    // does city or state matches search
+    const regex = new RegExp(wordToMatch, 'gi');
+    return place.city.match(regex) || place.state.match(regex);
+    // putting a variable into a regular expression
+  })
+}
+
+
 </script>
   </body>
 </html>
